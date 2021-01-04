@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:text="@string/app_name"
+        style="@style/appTitle" />
+
+    <LinearLayout
+        android:id="@+id/lay_search"
+        style="@style/SearchBarLinear">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            app:queryHint="Cari Negara"
+            app:iconifiedByDefault="false"
+            app:queryBackground="@null"
+            app:actionViewClass="android.widget.SearchView"
+            style="@style/SearchBar" />
+
+        <Button
+            android:id="@+id/btn_sequence"
+            style="@style/SequenceButton" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_globe"
+        style="@style/GlobalSummaryLinear">
+
+        <LinearLayout
+            style="@style/LinearSummary">
+
+            <TextView
+                android:text="@string/confirmed"
+                style="@style/TextSummaryItem" />
+
+            <TextView
+                android:id="@+id/txt_confirmed_globe"
+                android:text="12.0000.000"
+                style="@style/TextSummaryItemCount" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearSummary">
+
+            <TextView
+                style="@style/TextSummaryItem"
+                android:text="@string/recovered"/>
+
+            <TextView
+                android:id="@+id/txt_recovered_globe"
+                style="@style/TextSummaryItemCount"
+                android:text="12.0000.000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/LinearSummary">
+
+            <TextView
+                style="@style/TextSummaryItem"
+                android:text="@string/deaths"/>
+
+            <TextView
+                android:id="@+id/txt_deaths_globe"
+                style="@style/TextSummaryItemCount"
+                android:text="12.0000.000"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lay_header"
+        style="@style/CountrySummaryHeaderTitleLinear">
+
+        <TextView
+            android:text="@string/countries"
+            android:textColor="@android:color/black"
+            android:layout_weight="4"
+            android:layout_marginTop="@dimen/dp8"
+            style="@style/BoldText" />
+
+        <TextView
+            android:text="@string/cases"
+            android:textColor="@android:color/black"
+            android:layout_weight="5"
+            android:layout_marginTop="@dimen/dp8"
+            android:textAlignment="center"
+            style="@style/BoldText"/>
+
+        <TextView
+            android:text="@string/recovered"
+            android:textColor="@android:color/black"
+            android:layout_weight="5"
+            android:layout_marginTop="@dimen/dp8"
+            android:textAlignment="center"
+            style="@style/BoldText"/>
+
+        <TextView
+            android:text="@string/deaths"
+            android:textColor="@android:color/black"
+            android:layout_weight="5"
+            android:layout_marginTop="@dimen/dp8"
+            android:textAlignment="center"
+            style="@style/BoldText"/>
+
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/ProgressBar" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_below="@id/lay_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp5"
+        android:layout_marginBottom="@dimen/dp5">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_country"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/list_country"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>

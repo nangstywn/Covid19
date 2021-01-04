@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/lay_linear_header"
+        style="@style/ListCountryLinear">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_flag_country"
+            android:layout_width="@dimen/dp20"
+            android:layout_height="@dimen/dp20"
+            android:layout_marginEnd="@dimen/dp5"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <TextView
+            android:id="@+id/txt_country_name"
+            android:text="@string/countries"
+            style="@style/TextListCountryName" />
+
+        <TextView
+            android:id="@+id/txt_total_case"
+            android:text="@string/cases"
+            style="@style/TextListCountryTotal" />
+
+        <TextView
+            android:id="@+id/txt_total_recovered"
+            android:text="@string/recovered"
+            style="@style/TextListCountryTotal"/>
+
+        <TextView
+            android:id="@+id/txt_total_deaths"
+            android:text="@string/deaths"
+            style="@style/TextListCountryTotal"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

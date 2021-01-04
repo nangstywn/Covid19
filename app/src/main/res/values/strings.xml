@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Covid19</string>
+    <string name="confirmed">Terkonfirmasi</string>
+    <string name="recovered">Sembuh</string>
+    <string name="deaths">Meninggal</string>
+    <string name="countries">Negara</string>
+    <string name="cases">Kasus</string>
+</resources>
